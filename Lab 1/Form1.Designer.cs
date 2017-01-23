@@ -67,7 +67,7 @@
             this.buttonGo.Name = "buttonGo";
             this.buttonGo.Size = new System.Drawing.Size(115, 42);
             this.buttonGo.TabIndex = 3;
-            this.buttonGo.Text = "Go";
+            this.buttonGo.Text = "On / Off";
             this.buttonGo.UseVisualStyleBackColor = true;
             this.buttonGo.Click += new System.EventHandler(this.buttonGo_Click);
             // 

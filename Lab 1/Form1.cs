@@ -24,7 +24,7 @@ namespace Lab_1
 
         private void buttonGo_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+            timer1.Enabled = !timer1.Enabled;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
