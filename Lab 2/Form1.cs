@@ -16,5 +16,23 @@ namespace Lab_2
         {
             InitializeComponent();
         }
+
+        private void btnPortretPhoto_Click(object sender, EventArgs e)
+        {
+            picturePortretPhoto.Visible = true;
+            picturePortretPhoto.Image = global::Lab_2.Resource.PortretPhoto;
+        }
+
+        private void btnArtPhoto_Click(object sender, EventArgs e)
+        {
+            picturePortretPhoto.Visible = true;
+            picturePortretPhoto.Image = global::Lab_2.Resource.ArtPhoto;
+        }
+
+        private void btnHomePhoto_Click(object sender, EventArgs e)
+        {
+            picturePortretPhoto.Visible = true;
+            picturePortretPhoto.Image = global::Lab_2.Resource.HomePhoto;
+        }
     }
 }
