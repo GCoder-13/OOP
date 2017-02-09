@@ -40,8 +40,6 @@
             this.lbName = new System.Windows.Forms.Label();
             this.lbForm = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.pictureEx2 = new System.Windows.Forms.PictureBox();
             this.btnTakePhoto = new System.Windows.Forms.Button();
             this.btnEditPhoto = new System.Windows.Forms.Button();
@@ -49,31 +47,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.labelNamePhoto = new System.Windows.Forms.Label();
+            this.pictureEx3 = new System.Windows.Forms.PictureBox();
+            this.btnTakePhotoEx3 = new System.Windows.Forms.Button();
+            this.btnPortretPhotoEx3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEx1)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEx2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEx3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -81,7 +70,6 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -116,7 +104,6 @@
             this.pictureEx1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureEx1.TabIndex = 15;
             this.pictureEx1.TabStop = false;
-            this.pictureEx1.Visible = false;
             // 
             // btnHomePhoto
             // 
@@ -216,44 +203,9 @@
             this.tabPage2.Text = "Ex. 2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.pictureBox2);
-            this.tabPage3.Controls.Add(this.button4);
-            this.tabPage3.Controls.Add(this.button5);
-            this.tabPage3.Controls.Add(this.button6);
-            this.tabPage3.Controls.Add(this.label5);
-            this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Controls.Add(this.label7);
-            this.tabPage3.Controls.Add(this.label8);
-            this.tabPage3.Location = new System.Drawing.Point(4, 30);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(460, 360);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Ex. 3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.pictureBox3);
-            this.tabPage4.Controls.Add(this.button7);
-            this.tabPage4.Controls.Add(this.button8);
-            this.tabPage4.Controls.Add(this.button9);
-            this.tabPage4.Controls.Add(this.label9);
-            this.tabPage4.Controls.Add(this.label10);
-            this.tabPage4.Controls.Add(this.label11);
-            this.tabPage4.Controls.Add(this.label12);
-            this.tabPage4.Location = new System.Drawing.Point(4, 30);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(460, 360);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Ex.4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
             // pictureEx2
             // 
             this.pictureEx2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureEx2.Image = global::Lab_2.Resource.PortretPhoto;
             this.pictureEx2.Location = new System.Drawing.Point(251, 196);
             this.pictureEx2.Name = "pictureEx2";
             this.pictureEx2.Size = new System.Drawing.Size(165, 140);
@@ -270,6 +222,7 @@
             this.btnTakePhoto.TabIndex = 21;
             this.btnTakePhoto.Text = "Забрати фотографію";
             this.btnTakePhoto.UseVisualStyleBackColor = true;
+            this.btnTakePhoto.Click += new System.EventHandler(this.btnTakePhoto_Click);
             // 
             // btnEditPhoto
             // 
@@ -330,57 +283,74 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Анкета студента";
             // 
-            // pictureBox2
+            // tabPage3
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Location = new System.Drawing.Point(251, 196);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(165, 140);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 23;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
+            this.tabPage3.Controls.Add(this.labelNamePhoto);
+            this.tabPage3.Controls.Add(this.pictureEx3);
+            this.tabPage3.Controls.Add(this.btnTakePhotoEx3);
+            this.tabPage3.Controls.Add(this.btnPortretPhotoEx3);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.label6);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.label8);
+            this.tabPage3.Location = new System.Drawing.Point(4, 30);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(460, 360);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Ex. 3-4";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // labelNamePhoto
             // 
-            this.button4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(47, 306);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(178, 33);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Фотографія будинку";
-            this.button4.UseVisualStyleBackColor = true;
+            this.labelNamePhoto.AutoSize = true;
+            this.labelNamePhoto.Location = new System.Drawing.Point(43, 317);
+            this.labelNamePhoto.Name = "labelNamePhoto";
+            this.labelNamePhoto.Size = new System.Drawing.Size(0, 21);
+            this.labelNamePhoto.TabIndex = 31;
             // 
-            // button5
+            // pictureEx3
             // 
-            this.button5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(47, 251);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(178, 33);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "Художня фотографія";
-            this.button5.UseVisualStyleBackColor = true;
+            this.pictureEx3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureEx3.Location = new System.Drawing.Point(251, 198);
+            this.pictureEx3.Name = "pictureEx3";
+            this.pictureEx3.Size = new System.Drawing.Size(165, 140);
+            this.pictureEx3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureEx3.TabIndex = 30;
+            this.pictureEx3.TabStop = false;
             // 
-            // button6
+            // btnTakePhotoEx3
             // 
-            this.button6.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(47, 196);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(178, 33);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "Портретна фотографія";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnTakePhotoEx3.Enabled = false;
+            this.btnTakePhotoEx3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTakePhotoEx3.Location = new System.Drawing.Point(47, 253);
+            this.btnTakePhotoEx3.Name = "btnTakePhotoEx3";
+            this.btnTakePhotoEx3.Size = new System.Drawing.Size(178, 33);
+            this.btnTakePhotoEx3.TabIndex = 29;
+            this.btnTakePhotoEx3.Text = "Забрати фотографію";
+            this.btnTakePhotoEx3.UseVisualStyleBackColor = true;
+            this.btnTakePhotoEx3.Click += new System.EventHandler(this.btnTakePhotoEx3_Click);
+            // 
+            // btnPortretPhotoEx3
+            // 
+            this.btnPortretPhotoEx3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPortretPhotoEx3.Location = new System.Drawing.Point(47, 198);
+            this.btnPortretPhotoEx3.Name = "btnPortretPhotoEx3";
+            this.btnPortretPhotoEx3.Size = new System.Drawing.Size(178, 33);
+            this.btnPortretPhotoEx3.TabIndex = 28;
+            this.btnPortretPhotoEx3.Text = "Портретна фотографія";
+            this.btnPortretPhotoEx3.UseVisualStyleBackColor = true;
+            this.btnPortretPhotoEx3.Click += new System.EventHandler(this.btnPortretPhotoEx3_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(26, 146);
+            this.label5.Location = new System.Drawing.Point(26, 148);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(409, 21);
-            this.label5.TabIndex = 19;
+            this.label5.TabIndex = 27;
             this.label5.Text = "Адреса: м.Коростень, вул. Маяковського 2, кв. 14";
             // 
             // label6
@@ -388,11 +358,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(26, 106);
+            this.label6.Location = new System.Drawing.Point(26, 108);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(260, 21);
-            this.label6.TabIndex = 18;
+            this.label6.TabIndex = 26;
             this.label6.Text = "Дата народження: 13.12.1998 р.";
             // 
             // label7
@@ -400,11 +370,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(26, 67);
+            this.label7.Location = new System.Drawing.Point(26, 69);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(286, 21);
-            this.label7.TabIndex = 17;
+            this.label7.TabIndex = 25;
             this.label7.Text = "Хомутовський Андрій, група П-31";
             // 
             // label8
@@ -412,101 +382,12 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.Color.Purple;
-            this.label8.Location = new System.Drawing.Point(148, 21);
+            this.label8.Location = new System.Drawing.Point(148, 23);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(164, 24);
-            this.label8.TabIndex = 16;
+            this.label8.TabIndex = 24;
             this.label8.Text = "Анкета студента";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Location = new System.Drawing.Point(251, 196);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(165, 140);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 23;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Visible = false;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(47, 306);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(178, 33);
-            this.button7.TabIndex = 22;
-            this.button7.Text = "Фотографія будинку";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(47, 251);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(178, 33);
-            this.button8.TabIndex = 21;
-            this.button8.Text = "Художня фотографія";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(47, 196);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(178, 33);
-            this.button9.TabIndex = 20;
-            this.button9.Text = "Портретна фотографія";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(26, 146);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(409, 21);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Адреса: м.Коростень, вул. Маяковського 2, кв. 14";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(26, 106);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(260, 21);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Дата народження: 13.12.1998 р.";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(26, 67);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(286, 21);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Хомутовський Андрій, група П-31";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.ForeColor = System.Drawing.Color.Purple;
-            this.label12.Location = new System.Drawing.Point(148, 21);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(164, 24);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Анкета студента";
             // 
             // Form1
             // 
@@ -528,13 +409,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEx1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEx2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEx2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEx3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -552,8 +430,6 @@
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbForm;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.PictureBox pictureEx2;
         private System.Windows.Forms.Button btnTakePhoto;
         private System.Windows.Forms.Button btnEditPhoto;
@@ -561,22 +437,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.PictureBox pictureEx3;
+        private System.Windows.Forms.Button btnTakePhotoEx3;
+        private System.Windows.Forms.Button btnPortretPhotoEx3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelNamePhoto;
     }
 }
 
