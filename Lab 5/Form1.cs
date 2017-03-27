@@ -12,10 +12,11 @@ namespace Lab_5
 {
     public partial class MainForm : Form
     {
+        bool sw = false;
         public MainForm()
         {
             InitializeComponent();
-                    }
+        }
 
         private void UpKey(object sender, KeyEventArgs e)
         {
@@ -23,6 +24,7 @@ namespace Lab_5
             ValueLabel.ResetText();
             ShiftLabel.ResetText();
             UpdateKeyPanel();
+            sw = false;
         }
 
         private void Close(object sender, EventArgs e)
@@ -80,6 +82,20 @@ namespace Lab_5
 
             ValueLabel.Text = e.KeyValue.ToString();
             UpdateKeyPanel();
+
+            DoubleKeys(e);
+        }
+
+        private void DoubleKeys(KeyEventArgs e)
+        {
+            if (e.Shift && !sw)
+                sw = true;
+            else if (sw && e.KeyCode == Keys.P)
+            {
+                if (this.Width > this.Height)
+                    this.Height = this.Width;
+                else this.Width = this.Height;
+            }
         }
 
         private void UpdateKeyPanel()
@@ -101,6 +117,7 @@ namespace Lab_5
 
         private void btnSumEx3_Click(object sender, EventArgs e)
         {
+            textBoxValue2.BackColor = Color.Red;
             labelResEx3.Text = String.Format("{0:0.00e-0}", (Double.Parse(textBoxValue1.Text) + Double.Parse(textBoxValue2.Text)));
             //labelResEx3.Text = String.Format("{0:#.##e-0}", (Double.Parse(textBoxValue1.Text) + Double.Parse(textBoxValue2.Text)));
         }
