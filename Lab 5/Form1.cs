@@ -12,7 +12,6 @@ namespace Lab_5
 {
     public partial class MainForm : Form
     {
-        bool sw = false;
         public MainForm()
         {
             InitializeComponent();
@@ -24,7 +23,6 @@ namespace Lab_5
             ValueLabel.ResetText();
             ShiftLabel.ResetText();
             UpdateKeyPanel();
-            sw = false;
         }
 
         private void Close(object sender, EventArgs e)
@@ -88,9 +86,7 @@ namespace Lab_5
 
         private void DoubleKeys(KeyEventArgs e)
         {
-            if (e.Shift && !sw)
-                sw = true;
-            else if (sw && e.KeyCode == Keys.P)
+            if(ModifierKeys == Keys.Shift && e.KeyCode == Keys.P)
             {
                 if (this.Width > this.Height)
                     this.Height = this.Width;
