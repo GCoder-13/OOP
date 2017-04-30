@@ -43,6 +43,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -102,6 +104,7 @@
             this.btnRestore.TabIndex = 9;
             this.btnRestore.Text = "Restore";
             this.btnRestore.UseVisualStyleBackColor = true;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // btnRead
             // 
@@ -112,6 +115,7 @@
             this.btnRead.TabIndex = 10;
             this.btnRead.Text = "Read";
             this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // btnSave
             // 
@@ -122,6 +126,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
@@ -154,6 +159,7 @@
             this.btnInsert.TabIndex = 14;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnSet
             // 
@@ -209,6 +215,10 @@
             this.tabPage2.Text = "Ex.2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,7 +226,8 @@
             this.ClientSize = new System.Drawing.Size(474, 354);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Pr-4";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -241,6 +252,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
