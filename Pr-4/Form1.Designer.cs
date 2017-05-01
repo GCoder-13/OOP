@@ -97,6 +97,7 @@
             // 
             // btnRestore
             // 
+            this.btnRestore.Enabled = false;
             this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnRestore.Location = new System.Drawing.Point(350, 223);
             this.btnRestore.Name = "btnRestore";
