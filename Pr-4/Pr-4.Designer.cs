@@ -1,6 +1,6 @@
 ﻿namespace Pr_4
 {
-    partial class Form1
+    partial class FormPr_4
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -43,10 +43,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.labelFontName = new System.Windows.Forms.Label();
+            this.btnEx_2Close = new System.Windows.Forms.Button();
+            this.fontSize = new System.Windows.Forms.NumericUpDown();
+            this.labelTextSelected = new System.Windows.Forms.Label();
+            this.labelTextSize = new System.Windows.Forms.Label();
+            this.labelFont = new System.Windows.Forms.Label();
+            this.listBoxFonts = new System.Windows.Forms.ListBox();
+            this.labelTextFonts = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fontSize)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -58,7 +68,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(474, 354);
+            this.tabControl1.Size = new System.Drawing.Size(554, 354);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -79,7 +89,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(466, 325);
+            this.tabPage1.Size = new System.Drawing.Size(546, 325);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ex.1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -87,7 +97,7 @@
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnClose.Location = new System.Drawing.Point(350, 288);
+            this.btnClose.Location = new System.Drawing.Point(425, 288);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(108, 29);
             this.btnClose.TabIndex = 8;
@@ -99,7 +109,7 @@
             // 
             this.btnRestore.Enabled = false;
             this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRestore.Location = new System.Drawing.Point(350, 223);
+            this.btnRestore.Location = new System.Drawing.Point(425, 223);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(108, 29);
             this.btnRestore.TabIndex = 9;
@@ -110,7 +120,7 @@
             // btnRead
             // 
             this.btnRead.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnRead.Location = new System.Drawing.Point(350, 188);
+            this.btnRead.Location = new System.Drawing.Point(425, 188);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(108, 29);
             this.btnRead.TabIndex = 10;
@@ -121,7 +131,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSave.Location = new System.Drawing.Point(350, 153);
+            this.btnSave.Location = new System.Drawing.Point(425, 153);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(108, 29);
             this.btnSave.TabIndex = 11;
@@ -132,7 +142,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnClear.Location = new System.Drawing.Point(350, 118);
+            this.btnClear.Location = new System.Drawing.Point(425, 118);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(108, 29);
             this.btnClear.TabIndex = 12;
@@ -143,7 +153,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnDelete.Location = new System.Drawing.Point(350, 83);
+            this.btnDelete.Location = new System.Drawing.Point(425, 83);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(108, 29);
             this.btnDelete.TabIndex = 13;
@@ -154,7 +164,7 @@
             // btnInsert
             // 
             this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnInsert.Location = new System.Drawing.Point(350, 48);
+            this.btnInsert.Location = new System.Drawing.Point(425, 48);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(108, 29);
             this.btnInsert.TabIndex = 14;
@@ -165,7 +175,7 @@
             // btnSet
             // 
             this.btnSet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnSet.Location = new System.Drawing.Point(350, 13);
+            this.btnSet.Location = new System.Drawing.Point(425, 13);
             this.btnSet.Name = "btnSet";
             this.btnSet.Size = new System.Drawing.Size(108, 29);
             this.btnSet.TabIndex = 15;
@@ -203,35 +213,136 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(8, 64);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(323, 251);
+            this.listBox1.Size = new System.Drawing.Size(401, 251);
             this.listBox1.TabIndex = 4;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.labelFontName);
+            this.tabPage2.Controls.Add(this.btnEx_2Close);
+            this.tabPage2.Controls.Add(this.fontSize);
+            this.tabPage2.Controls.Add(this.labelTextSelected);
+            this.tabPage2.Controls.Add(this.labelTextSize);
+            this.tabPage2.Controls.Add(this.labelFont);
+            this.tabPage2.Controls.Add(this.listBoxFonts);
+            this.tabPage2.Controls.Add(this.labelTextFonts);
+            this.tabPage2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(466, 325);
+            this.tabPage2.Size = new System.Drawing.Size(546, 325);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Ex.2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // labelFontName
+            // 
+            this.labelFontName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelFontName.Location = new System.Drawing.Point(344, 113);
+            this.labelFontName.Name = "labelFontName";
+            this.labelFontName.Size = new System.Drawing.Size(179, 30);
+            this.labelFontName.TabIndex = 10;
+            this.labelFontName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnEx_2Close
+            // 
+            this.btnEx_2Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnEx_2Close.Location = new System.Drawing.Point(424, 283);
+            this.btnEx_2Close.Name = "btnEx_2Close";
+            this.btnEx_2Close.Size = new System.Drawing.Size(108, 29);
+            this.btnEx_2Close.TabIndex = 9;
+            this.btnEx_2Close.Text = "Close";
+            this.btnEx_2Close.UseVisualStyleBackColor = true;
+            this.btnEx_2Close.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // fontSize
+            // 
+            this.fontSize.Location = new System.Drawing.Point(400, 34);
+            this.fontSize.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.fontSize.Minimum = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.fontSize.Name = "fontSize";
+            this.fontSize.Size = new System.Drawing.Size(70, 22);
+            this.fontSize.TabIndex = 5;
+            this.fontSize.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.fontSize.ValueChanged += new System.EventHandler(this.fontSize_ValueChanged);
+            // 
+            // labelTextSelected
+            // 
+            this.labelTextSelected.AutoSize = true;
+            this.labelTextSelected.Location = new System.Drawing.Point(344, 94);
+            this.labelTextSelected.Name = "labelTextSelected";
+            this.labelTextSelected.Size = new System.Drawing.Size(88, 16);
+            this.labelTextSelected.TabIndex = 4;
+            this.labelTextSelected.Text = "Selected font:";
+            // 
+            // labelTextSize
+            // 
+            this.labelTextSize.AutoSize = true;
+            this.labelTextSize.Location = new System.Drawing.Point(344, 36);
+            this.labelTextSize.Name = "labelTextSize";
+            this.labelTextSize.Size = new System.Drawing.Size(38, 16);
+            this.labelTextSize.TabIndex = 3;
+            this.labelTextSize.Text = "Size:";
+            // 
+            // labelFont
+            // 
+            this.labelFont.Location = new System.Drawing.Point(29, 247);
+            this.labelFont.Name = "labelFont";
+            this.labelFont.Size = new System.Drawing.Size(275, 65);
+            this.labelFont.TabIndex = 2;
+            this.labelFont.Text = "A B C – 1 2 3 !";
+            this.labelFont.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // listBoxFonts
+            // 
+            this.listBoxFonts.FormattingEnabled = true;
+            this.listBoxFonts.ItemHeight = 16;
+            this.listBoxFonts.Location = new System.Drawing.Point(13, 33);
+            this.listBoxFonts.Name = "listBoxFonts";
+            this.listBoxFonts.Size = new System.Drawing.Size(307, 196);
+            this.listBoxFonts.TabIndex = 1;
+            this.listBoxFonts.SelectedIndexChanged += new System.EventHandler(this.listBoxFonts_SelectedIndexChanged);
+            // 
+            // labelTextFonts
+            // 
+            this.labelTextFonts.AutoSize = true;
+            this.labelTextFonts.Location = new System.Drawing.Point(15, 13);
+            this.labelTextFonts.Name = "labelTextFonts";
+            this.labelTextFonts.Size = new System.Drawing.Size(45, 16);
+            this.labelTextFonts.TabIndex = 0;
+            this.labelTextFonts.Text = "Fonts:";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // Form1
+            // FormPr_4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 354);
+            this.ClientSize = new System.Drawing.Size(554, 354);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
+            this.Name = "FormPr_4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pr-4";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fontSize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,6 +366,14 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label labelTextFonts;
+        private System.Windows.Forms.Label labelFont;
+        private System.Windows.Forms.ListBox listBoxFonts;
+        private System.Windows.Forms.NumericUpDown fontSize;
+        private System.Windows.Forms.Label labelTextSelected;
+        private System.Windows.Forms.Label labelTextSize;
+        private System.Windows.Forms.Button btnEx_2Close;
+        private System.Windows.Forms.Label labelFontName;
     }
 }
 

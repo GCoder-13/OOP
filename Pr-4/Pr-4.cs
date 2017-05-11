@@ -11,17 +11,23 @@ using System.Windows.Forms;
 
 namespace Pr_4
 {
-    public partial class Form1 : Form
+    public partial class FormPr_4 : Form
     {
         public event EventHandler<Actions> SwRestore;
         Stack<Restore> history = new Stack<Restore>();
 
-        public Form1()
+        public FormPr_4()
         {
             InitializeComponent();
             openFileDialog1.Filter = "Текстові файли(*.txt)|*.txt|Всі файли(*.*)|*.*";
             saveFileDialog1.Filter = "Текстові файли(*.txt)|*.txt|Всі файли(*.*)|*.*";
             new Restore(ref listBox1);
+
+            System.Drawing.Text.InstalledFontCollection fonts = new System.Drawing.Text.InstalledFontCollection();
+            foreach (FontFamily font in fonts.Families)
+            {
+                this.listBoxFonts.Items.Add(font.Name);
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -166,15 +172,12 @@ namespace Pr_4
                     break;
                 case Actions.Save:
                     string file = sender as string;
-                    try
-                    {
-                        File.Open(file, FileMode.Open);
-                    }
-                    catch(FileNotFoundException)
+                    if (!File.Exists(file))
                     {
                         restore = new Restore(e, file);
                         break;
                     }
+                    
                     string[] list = File.ReadAllLines(file);
                     restore = new Restore(e, file, list);
                     break;
@@ -182,6 +185,29 @@ namespace Pr_4
             history.Push(restore);
             btnRestore.Enabled = true;
             return;
+        }
+
+        private void listBoxFonts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = (sender as ListBox).SelectedIndex;
+            float size = (float)this.fontSize.Value;
+            this.labelFontName.Text = (sender as ListBox).Items[index].ToString();
+            try
+            {
+                this.labelFont.Font = new Font((sender as ListBox).Items[index].ToString(), size);
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+
+        private void fontSize_ValueChanged(object sender, EventArgs e)
+        {
+            float size = (float)(sender as NumericUpDown).Value;
+            string name = this.labelFontName.Text;
+            if (!String.IsNullOrEmpty(name))
+                this.labelFont.Font = new Font(name, size);
         }
     }
 
@@ -239,7 +265,7 @@ namespace Pr_4
                 case Actions.Read:
                     list.Items.Clear();
                     MessageBox.Show("Файл закритий");
-                    list.Items.AddRange(obj1 as string[]);
+                    list.Items.AddRange((string[])obj1);
                     break;
                 case Actions.Save:
                     if (obj2 == null)
@@ -249,7 +275,7 @@ namespace Pr_4
                     }
                     else
                     {
-                        File.WriteAllLines(obj1 as string, obj2 as string[]);
+                        File.WriteAllLines(obj1 as string, (string[])obj2);
                         MessageBox.Show("Файл відновлено");
                     }
                     break;
