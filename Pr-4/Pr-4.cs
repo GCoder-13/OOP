@@ -16,6 +16,8 @@ namespace Pr_4
         public event EventHandler<Actions> SwRestore;
         Stack<Restore> history = new Stack<Restore>();
 
+        ListBox selectedMonth;
+
         public FormPr_4()
         {
             InitializeComponent();
@@ -28,6 +30,8 @@ namespace Pr_4
             {
                 this.listBoxFonts.Items.Add(font.Name);
             }
+
+            selectedMonth = this.listBoxJan;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -208,6 +212,94 @@ namespace Pr_4
             string name = this.labelFontName.Text;
             if (!String.IsNullOrEmpty(name))
                 this.labelFont.Font = new Font(name, size);
+        }
+
+        private void btnEx_3Add_Click(object sender, EventArgs e)
+        {
+            string text = this.textBoxEx_3Input.Text;
+            if (String.IsNullOrWhiteSpace(text))
+            {
+                MessageBox.Show("Відсутній текст",
+                "Помилка!",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+                return;
+            }
+            this.selectedMonth.Items.Add(text);
+            this.textBoxEx_3Input.Clear();
+        }
+
+        private void tabControlCalendar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (this.tabControlCalendar.SelectedIndex)
+            {
+                case 0:
+                    this.selectedMonth = this.listBoxJan;
+                    break;
+                case 1:
+                    this.selectedMonth = this.listBoxFeb;
+                    break;
+                case 2:
+                    this.selectedMonth = this.listBoxMar;
+                    break;
+                case 3:
+                    this.selectedMonth = this.listBoxApr;
+                    break;
+                case 4:
+                    this.selectedMonth = this.listBoxMay;
+                    break;
+                case 5:
+                    this.selectedMonth = this.listBoxJun;
+                    break;
+                case 6:
+                    this.selectedMonth = this.listBoxJul;
+                    break;
+                case 7:
+                    this.selectedMonth = this.listBoxAug;
+                    break;
+                case 8:
+                    this.selectedMonth = this.listBoxSep;
+                    break;
+                case 9:
+                    this.selectedMonth = this.listBoxOct;
+                    break;
+                case 10:
+                    this.selectedMonth = this.listBoxNov;
+                    break;
+                case 11:
+                    this.selectedMonth = this.listBoxDec;
+                    break;
+            }
+        }
+
+        private void btnEx_3Delete_Click(object sender, EventArgs e)
+        {
+            int index = this.selectedMonth.SelectedIndex;
+            if (index == -1)
+            {
+                MessageBox.Show("Елемент для видалення не виброний",
+                "Помилка!",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+                return;
+            }
+            this.selectedMonth.Items.RemoveAt(index);
+        }
+
+        private void btnEx_3Change_Click(object sender, EventArgs e)
+        {
+            string text = this.textBoxEx_3Input.Text;
+            int index = this.selectedMonth.SelectedIndex;
+            if (String.IsNullOrWhiteSpace(text) && index != -1)
+            {
+                MessageBox.Show("Відсутній текст або не вибраний елемент",
+                "Помилка!",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+                return;
+            }
+            this.selectedMonth.Items[index] = text;
+            this.textBoxEx_3Input.Clear();
         }
     }
 
