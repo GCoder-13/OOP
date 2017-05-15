@@ -1,6 +1,6 @@
 ﻿namespace Lab_5
 {
-    partial class FormLab_5
+    partial class Lab_5_Ex_1
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -116,7 +116,7 @@
             this.btnCalculate.UseVisualStyleBackColor = true;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
-            // FormLab_5
+            // Lab_5_Ex_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -131,9 +131,10 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormLab_5";
+            this.Name = "Lab_5_Ex_1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lab-5";
+            this.Text = "Lab-5 Ex.1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Lab_5_Ex_1_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

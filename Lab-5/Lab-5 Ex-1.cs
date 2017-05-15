@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Lab_5
 {
-    public partial class FormLab_5 : Form
+    public partial class Lab_5_Ex_1 : Form
     {
         private readonly string[] MEASURE =
         {
@@ -24,9 +24,11 @@ namespace Lab_5
             "ярд"
         };
         private double standartMeasure = default(double);
+        private MainForm formMenu;
 
-        public FormLab_5()
+        public Lab_5_Ex_1(MainForm main)
         {
+            this.formMenu = main;
             InitializeComponent();
             this.comboBoxStartMeasure.Items.AddRange(MEASURE);
             this.comboBoxStartMeasure.SelectedIndex = 0;
@@ -111,6 +113,11 @@ namespace Lab_5
                     break;
             }
             this.textBoxResult.Text = result.ToString();
+        }
+
+        private void Lab_5_Ex_1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.formMenu.Visible = true;
         }
     }
 }
