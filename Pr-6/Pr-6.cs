@@ -26,10 +26,23 @@ namespace Pr_6
         private void OnlyNumeric(object sender, KeyPressEventArgs e)
         {
             string text = this.textBoxResult.Text;
+            if (this.textBoxResult.Text == "0")
+                this.textBoxResult.Clear();
             if (e.KeyChar == '.')
             {
                 e.KeyChar = ',';
-            }            
+            }
+
+            if (e.KeyChar == '+' || e.KeyChar == '-' || e.KeyChar == '*' || e.KeyChar == '/')
+            {
+                Button btn = new Button();
+                btn.Text = e.KeyChar.ToString();
+                operator_Click(btn, e);
+            }
+            else if(e.KeyChar == '=' || e.KeyChar == (char)Keys.Enter)
+            {
+                btnEqual_Click(sender, e);
+            }
 
             if (canDot && e.KeyChar == ',')
             {
@@ -43,7 +56,6 @@ namespace Pr_6
             {
                 e.KeyChar = (char)0;
             }
-            this.textBoxResult.Text += e.KeyChar;
         }
 
         private void btnNumeric_Click(object sender, EventArgs e)

@@ -57,12 +57,11 @@
             this.textBoxResult.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxResult.Location = new System.Drawing.Point(21, 19);
             this.textBoxResult.Name = "textBoxResult";
-            this.textBoxResult.ReadOnly = true;
             this.textBoxResult.Size = new System.Drawing.Size(230, 35);
-            this.textBoxResult.TabIndex = 0;
-            this.textBoxResult.TabStop = false;
+            this.textBoxResult.TabIndex = 1;
             this.textBoxResult.Text = "0";
             this.textBoxResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxResult.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumeric);
             // 
             // btnZero
             // 
@@ -317,7 +316,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pr-6";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumeric);
             this.ResumeLayout(false);
             this.PerformLayout();
 
