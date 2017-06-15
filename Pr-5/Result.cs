@@ -19,6 +19,8 @@ namespace Pr_5
         {
             InitializeComponent();
             this.mainForm = mainForm;
+            colorDialog1.FullOpen = true;
+            colorDialog1.Color = this.BackColor;
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,6 +77,14 @@ namespace Pr_5
         private void Result_Activated(object sender, EventArgs e)
         {
             this.lblResult.Text = Math.Round(this.result, 5).ToString();
+        }
+
+        private void ColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            this.lblResult.ForeColor = colorDialog1.Color;
+            this.label3.ForeColor = colorDialog1.Color;
         }
     }
 }

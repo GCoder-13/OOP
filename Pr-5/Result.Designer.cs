@@ -39,6 +39,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.ColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +49,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
             this.resultToolStripMenuItem,
+            this.ColorToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -75,28 +78,28 @@
             // PlusToolStripMenuItem
             // 
             this.PlusToolStripMenuItem.Name = "PlusToolStripMenuItem";
-            this.PlusToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.PlusToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.PlusToolStripMenuItem.Text = "Додавання";
             this.PlusToolStripMenuItem.Click += new System.EventHandler(this.PlusToolStripMenuItem_Click);
             // 
             // MinusToolStripMenuItem
             // 
             this.MinusToolStripMenuItem.Name = "MinusToolStripMenuItem";
-            this.MinusToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.MinusToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.MinusToolStripMenuItem.Text = "Віднімання";
             this.MinusToolStripMenuItem.Click += new System.EventHandler(this.MinusToolStripMenuItem_Click);
             // 
             // MnozhToolStripMenuItem
             // 
             this.MnozhToolStripMenuItem.Name = "MnozhToolStripMenuItem";
-            this.MnozhToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.MnozhToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.MnozhToolStripMenuItem.Text = "Множення";
             this.MnozhToolStripMenuItem.Click += new System.EventHandler(this.MnozhToolStripMenuItem_Click);
             // 
             // DilToolStripMenuItem
             // 
             this.DilToolStripMenuItem.Name = "DilToolStripMenuItem";
-            this.DilToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.DilToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.DilToolStripMenuItem.Text = "Ділення";
             this.DilToolStripMenuItem.Click += new System.EventHandler(this.DilToolStripMenuItem_Click);
             // 
@@ -138,6 +141,13 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // ColorToolStripMenuItem
+            // 
+            this.ColorToolStripMenuItem.Name = "ColorToolStripMenuItem";
+            this.ColorToolStripMenuItem.Size = new System.Drawing.Size(134, 20);
+            this.ColorToolStripMenuItem.Text = "Змінити колір тексту";
+            this.ColorToolStripMenuItem.Click += new System.EventHandler(this.ColorToolStripMenuItem_Click);
+            // 
             // Result
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,5 +182,7 @@
         private System.Windows.Forms.ToolStripMenuItem MnozhToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DilToolStripMenuItem;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ToolStripMenuItem ColorToolStripMenuItem;
     }
 }
