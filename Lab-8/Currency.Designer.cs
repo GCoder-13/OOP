@@ -31,8 +31,8 @@
             this.radioBuy = new System.Windows.Forms.RadioButton();
             this.radioSell = new System.Windows.Forms.RadioButton();
             this.labelArrow = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxCursUSD = new System.Windows.Forms.TextBox();
+            this.textBoxCursGRN = new System.Windows.Forms.TextBox();
             this.textBoxUSD = new System.Windows.Forms.TextBox();
             this.textBoxGRN = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,6 +40,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // radioBuy
@@ -52,6 +53,7 @@
             this.radioBuy.TabIndex = 0;
             this.radioBuy.Text = "Купівля";
             this.radioBuy.UseVisualStyleBackColor = true;
+            this.radioBuy.CheckedChanged += new System.EventHandler(this.radioBuy_CheckedChanged);
             // 
             // radioSell
             // 
@@ -65,6 +67,7 @@
             this.radioSell.TabStop = true;
             this.radioSell.Text = "Продаж";
             this.radioSell.UseVisualStyleBackColor = true;
+            this.radioSell.CheckedChanged += new System.EventHandler(this.radioSell_CheckedChanged);
             // 
             // labelArrow
             // 
@@ -78,21 +81,26 @@
             this.labelArrow.Text = "->";
             this.labelArrow.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // textBoxCursUSD
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(31, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(136, 22);
-            this.textBox1.TabIndex = 2;
+            this.textBoxCursUSD.Enabled = false;
+            this.textBoxCursUSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxCursUSD.Location = new System.Drawing.Point(31, 91);
+            this.textBoxCursUSD.Name = "textBoxCursUSD";
+            this.textBoxCursUSD.Size = new System.Drawing.Size(136, 22);
+            this.textBoxCursUSD.TabIndex = 2;
+            this.textBoxCursUSD.Text = "0";
+            this.textBoxCursUSD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
-            // textBox2
+            // textBoxCursGRN
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(230, 91);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 22);
-            this.textBox2.TabIndex = 2;
+            this.textBoxCursGRN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxCursGRN.Location = new System.Drawing.Point(230, 91);
+            this.textBoxCursGRN.Name = "textBoxCursGRN";
+            this.textBoxCursGRN.Size = new System.Drawing.Size(137, 22);
+            this.textBoxCursGRN.TabIndex = 2;
+            this.textBoxCursGRN.Text = "0";
+            this.textBoxCursGRN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // textBoxUSD
             // 
@@ -101,14 +109,19 @@
             this.textBoxUSD.Name = "textBoxUSD";
             this.textBoxUSD.Size = new System.Drawing.Size(136, 22);
             this.textBoxUSD.TabIndex = 2;
+            this.textBoxUSD.Text = "0";
+            this.textBoxUSD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // textBoxGRN
             // 
             this.textBoxGRN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxGRN.Location = new System.Drawing.Point(230, 144);
             this.textBoxGRN.Name = "textBoxGRN";
+            this.textBoxGRN.ReadOnly = true;
             this.textBoxGRN.Size = new System.Drawing.Size(137, 22);
             this.textBoxGRN.TabIndex = 2;
+            this.textBoxGRN.Text = "0";
+            this.textBoxGRN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
             // 
             // button1
             // 
@@ -119,6 +132,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Обчислити";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -160,20 +174,30 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "ГРН";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(181, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Курс";
+            // 
             // Currency
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 236);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxGRN);
             this.Controls.Add(this.textBoxUSD);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxCursGRN);
+            this.Controls.Add(this.textBoxCursUSD);
             this.Controls.Add(this.labelArrow);
             this.Controls.Add(this.radioSell);
             this.Controls.Add(this.radioBuy);
@@ -194,8 +218,8 @@
         private System.Windows.Forms.RadioButton radioBuy;
         private System.Windows.Forms.RadioButton radioSell;
         private System.Windows.Forms.Label labelArrow;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxCursUSD;
+        private System.Windows.Forms.TextBox textBoxCursGRN;
         private System.Windows.Forms.TextBox textBoxUSD;
         private System.Windows.Forms.TextBox textBoxGRN;
         private System.Windows.Forms.Button button1;
@@ -203,5 +227,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

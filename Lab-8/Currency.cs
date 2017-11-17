@@ -13,10 +13,22 @@ namespace Lab_8
     public partial class Currency : Form
     {
         App mainForm = default(App);
+        double cursUSD => Double.Parse(this.textBoxCursUSD.Text);
+        double cursGRN => Double.Parse(this.textBoxCursGRN.Text);
+        double USD => Double.Parse(this.textBoxUSD.Text);
+        double GRN => Double.Parse(this.textBoxGRN.Text);
         public Currency(App form)
         {
             mainForm = form;
             InitializeComponent();
+        }
+
+        private void OnlyNumber(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != ',' && e.KeyChar != '.' && e.KeyChar != (char)8)
+                e.KeyChar = (char)0;
+            else if (e.KeyChar == '.')
+                e.KeyChar = ',';
         }
 
         private void Currency_FormClosed(object sender, FormClosedEventArgs e)
@@ -28,15 +40,11 @@ namespace Lab_8
         {
             if (this.radioSell.Checked)
             {
-                this.radioSell.Checked = false;
                 this.radioBuy.Checked = true;
-                this.labelArrow.Text = "<-";
             }
             else
             {
                 this.radioSell.Checked = true;
-                this.radioBuy.Checked = false;
-                this.labelArrow.Text = "->";
             }
         }
 
@@ -50,6 +58,32 @@ namespace Lab_8
             foreach(TextBox item in this.Controls.OfType<TextBox>())
             {
                 item.ResetText();
+            }
+        }
+
+        private void radioBuy_CheckedChanged(object sender, EventArgs e)
+        {
+            this.labelArrow.Text = "<-";
+            this.textBoxCursUSD.Enabled = true;
+            this.textBoxCursGRN.Enabled = false;
+        }
+
+        private void radioSell_CheckedChanged(object sender, EventArgs e)
+        {
+            this.labelArrow.Text = "->";
+            this.textBoxCursUSD.Enabled = false;
+            this.textBoxCursGRN.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.radioBuy.Checked)
+            {
+                this.textBoxGRN.Text = (cursUSD * USD).ToString();
+            }
+            else
+            {
+                this.textBoxGRN.Text = (cursGRN * USD).ToString();
             }
         }
     }
