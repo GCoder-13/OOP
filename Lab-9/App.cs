@@ -33,24 +33,7 @@ namespace Lab_9
                 return Double.Parse(this.textBoxStep.Text);
             }
         }
-        double[] rez
-        {
-            get
-            {
-                int n = Convert.ToInt32((this.rightBorder - this.leftBorder) / this.step);
-                double[] arr = new double[n];
-                // TODO: tabulate y = sin(x) + 1;
-                for (double i = this.leftBorder; i < n; i += this.step)
-                {
-
-                }
-                return arr;
-            }
-            set
-            {
-                this.rez = value;
-            }
-        }
+        double[] rez { get; set; }
         double[] rezDerivative { get; set; }
 
         public App()
@@ -78,7 +61,43 @@ namespace Lab_9
                 MessageBox.Show("Заповніть всі поля.", "Exclamation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            MessageBox.Show($"{this.leftBorder}");
+            int n = Convert.ToInt32((this.rightBorder - this.leftBorder) / this.step);
+            double value = this.leftBorder;
+            this.richTextBoxOutput.ResetText();
+            this.chart1.Series["Y"].ResetIsValueShownAsLabel();
+            this.chart1.Series["dY"].ResetIsValueShownAsLabel();
+            if (this.checkBox1.Checked && !this.checkBox3.Checked)
+            {
+                this.richTextBoxOutput.Text = "X \t Y \n";
+            }
+            if (this.checkBox3.Checked)
+            {
+                this.richTextBoxOutput.Text = "X \t Y \t Y\'\n";
+            }
+            for (int i = 0; i < n; i++)
+            {
+                double y = Math.Sin(value) + 1;
+                double dy = -Math.Cos(value);
+                if (this.checkBox1.Checked && !this.checkBox3.Checked)
+                {
+                    this.richTextBoxOutput.Text += $"{value} \t {Math.Round(y, 2)}\n";
+                }
+                if(this.checkBox1.Checked)
+                {
+                    this.chart1.Series["Y"].Points.AddXY(value, y);
+                }
+                if (this.checkBox3.Checked)
+                {
+                    this.chart1.Series["dY"].Points.AddXY(value, dy);
+                    this.richTextBoxOutput.Text += $"{value} \t {Math.Round(y, 2)} \t {Math.Round(dy, 2)}\n";
+                }
+                value += this.step;
+            }
+            if (this.checkBox2.Checked && this.saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.richTextBoxOutput.SaveFile(this.saveFileDialog.FileName, RichTextBoxStreamType.PlainText);
+                GC.Collect();
+            }
         }
     }
 }
