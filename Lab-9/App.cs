@@ -64,8 +64,8 @@ namespace Lab_9
             int n = Convert.ToInt32((this.rightBorder - this.leftBorder) / this.step);
             double value = this.leftBorder;
             this.richTextBoxOutput.ResetText();
-            this.chart1.Series["Y"].ResetIsValueShownAsLabel();
-            this.chart1.Series["dY"].ResetIsValueShownAsLabel();
+            this.chart1.Series["Y"].Points.Clear();
+            this.chart1.Series["dY"].Points.Clear();
             if (this.checkBox1.Checked && !this.checkBox3.Checked)
             {
                 this.richTextBoxOutput.Text = "X \t Y \n";
